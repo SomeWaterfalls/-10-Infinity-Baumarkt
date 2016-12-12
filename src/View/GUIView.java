@@ -32,25 +32,25 @@ public class GUIView {
 
         upButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                upButton.setEnabled(mainController.upIsPossible());
             }
         });
 
         downButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                downButton.setEnabled(mainController.downIsPossible());
             }
         });
 
         leftButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                leftButton.setEnabled(mainController.leftIsPossible());
             }
         });
 
         rightButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                rightButton.setEnabled(mainController.rightIsPossible());
             }
         });
 
@@ -64,7 +64,7 @@ public class GUIView {
             public void actionPerformed(ActionEvent e) {
 
 
-                elevatorUpButton.setEnabled(mainController.downIsPossible());
+                elevatorUpButton.setEnabled(mainController.downEIsPossible());
                 }
 
         });
@@ -75,9 +75,8 @@ public class GUIView {
 
 
                 //ist weiterhin hoch möglich? Falls nicht -> Knopf aus
-                elevatorUpButton.setEnabled(mainController.upIsPossible());
+                elevatorUpButton.setEnabled(mainController.upEIsPossible());
             }
         });
-
     }
 }

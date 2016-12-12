@@ -13,11 +13,27 @@ public class MainController {
     }
 
     //TODO
+    public boolean upEIsPossible(){
+        return true;
+    }
+
+    public boolean downEIsPossible(){
+        return true;
+    }
+
     public boolean upIsPossible(){
         return true;
     }
 
     public boolean downIsPossible(){
+        return true;
+    }
+
+    public boolean leftIsPossible(){
+        return true;
+    }
+
+    public boolean rightIsPossible(){
         return true;
     }
 }

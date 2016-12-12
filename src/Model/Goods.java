@@ -1,16 +1,16 @@
 package Model;
 
 /**
- * Created by 204g11 on 09.12.2016.
+ * Created by SomeWaterfalls & Automatik-BlueBird on 09.12.2016.
  */
-public class Goods<ContentType> {
+public class Goods<Good> {
     //List
 
     /* --------- Anfang der privaten inneren Klasse -------------- */
 
     private class ListNode {
 
-        private ContentType contentObject;
+        private Good contentObject;
         private ListNode next;
 
         /**
@@ -18,7 +18,7 @@ public class Goods<ContentType> {
          *
          * @param pContent das Inhaltsobjekt vom Typ ContentType
          */
-        private ListNode(ContentType pContent) {
+        private ListNode(Good pContent) {
             contentObject = pContent;
             next = null;
         }
@@ -28,7 +28,7 @@ public class Goods<ContentType> {
          *
          * @return das Inhaltsobjekt des Knotens
          */
-        public ContentType getContentObject() {
+        public Good getContentObject() {
             return contentObject;
         }
 
@@ -37,7 +37,7 @@ public class Goods<ContentType> {
          *
          * @param pContent das Inhaltsobjekt vom Typ ContentType
          */
-        public void setContentObject(ContentType pContent) {
+        public void setContentObject(Good pContent) {
             contentObject = pContent;
         }
 
@@ -144,7 +144,7 @@ public class Goods<ContentType> {
      * @return das aktuelle Objekt (vom Typ ContentType) oder null, wenn es
      *         kein aktuelles Objekt gibt
      */
-    public ContentType getContent() {
+    public Good getGood() {
         if(hasAccess()){
             return current.getContentObject();
         }
@@ -159,7 +159,7 @@ public class Goods<ContentType> {
      * @param pContent
      *            das zu schreibende Objekt vom Typ ContentType
      */
-    public void setContent(ContentType pContent) {
+    public void setContent(Good pContent) {
         // Nichts tun, wenn es keinen Inhalt oder kein aktuelles Element gibt.
         // Insert Code here! :O
         if(hasAccess() && pContent != null){
@@ -179,7 +179,7 @@ public class Goods<ContentType> {
      * @param pContent
      *            das einzufuegende Objekt vom Typ ContentType
      */
-    public void insert(ContentType pContent) {
+    public void insert(Good pContent) {
         //Insert Code here! :O
         if(pContent != null){
             ListNode newNode = new ListNode(pContent);
@@ -209,7 +209,7 @@ public class Goods<ContentType> {
      * @param pContent
      *            das anzuhaengende Objekt vom Typ ContentType
      */
-    public void append(ContentType pContent) {
+    public void append(Good pContent) {
         if(pContent != null){
             ListNode newNode = new ListNode(pContent);
             if(!isEmpty()) {
@@ -231,14 +231,14 @@ public class Goods<ContentType> {
      * @param pList
      *            die am Ende anzuhaengende Liste vom Typ List<ContentType>
      */
-    public void concat(Goods<ContentType> pList) {
+    public void concat(Goods<Good> pList) {
         if(this != pList && pList != null){
             pList.toFirst();
             while(pList.hasAccess()){
                 this.append(pList.current.contentObject);
                 pList.next();
             }
-            pList = new Goods<ContentType>();
+            pList = new Goods<Good>();
         }
     }
 

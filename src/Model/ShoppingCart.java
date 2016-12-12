@@ -1,19 +1,20 @@
 package Model;
 
 /**
- * Created by 204g11 on 09.12.2016.
+ * Created by SomeWaterfalls & Automatik-BlueBird on 09.12.2016.
  */
-public class ShoppingCart<ContentType> {
+public class ShoppingCart<Good> {
     //Stack
 
 
     private StackNode top;
+    private int size = 0;
 
     //___________________________________________
     private class StackNode{
-        private ContentType content= null;
+        private Good content= null;
         private StackNode next = null;
-        public StackNode(ContentType content){
+        public StackNode(Good content){
             this.content =content;
         }
 
@@ -23,7 +24,7 @@ public class ShoppingCart<ContentType> {
         public StackNode getNext(){
             return next;
         }
-        public ContentType getContent(){
+        public Good getContent(){
             return content;
         }
     }
@@ -40,23 +41,31 @@ public class ShoppingCart<ContentType> {
         return false;
     }
 
-    public void push(ContentType object){
+    public void push(Good object){
         StackNode node = new StackNode(object);
         node.setNext(top);
         top = node;
+        size++;
+
     }
 
     public void pop(){
         if(top!=null) {
             top = top.getNext();
         }
+        size--;
     }
 
-    public ContentType top(){
+
+    public Good top(){
         if(top != null) {
             return top.getContent();
         }
         return null;
+    }
+
+    public int getSize(){
+        return size;
     }
 
 }

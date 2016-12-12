@@ -5,4 +5,20 @@ package Control;
  */
 public class MainController {
     //Yo, Phillip, dis is your Métier.
+
+    //Etagenzahl liefern, aktuelle Section, Etagenbreite und höhe aus Blueprint-Objekt weiterleiten
+    //TODO
+    public int getLevelCount() {
+        return 3;
+    }
+
+    //TODO
+    public boolean upIsPossible(){
+        return true;
+    }
+
+    public boolean downIsPossible(){
+        return true;
+    }
 }
+

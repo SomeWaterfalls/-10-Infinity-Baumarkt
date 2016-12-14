@@ -4,7 +4,7 @@ package Model;
  * Created by SomeWaterfalls & Automatik-BlueBird on 09.12.2016.
  */
 public class Customer {
-    private ShoppingCart<Good> cart;
+    private Stack<Good> cart;
     private double budget;
     private double fullPrice = 0;
 
@@ -12,7 +12,7 @@ public class Customer {
      * Ein Customer wird erzeugt und kriegt einen Einkaufswagen und ein Budget.
      */
     public Customer(double budget) {
-        cart = new ShoppingCart();
+        cart = new Stack();
         this.budget = budget;
     }
 
@@ -25,7 +25,7 @@ public class Customer {
     }
 
     /**
-     * Berechnet auf Aufruf den Preis der gesamten Waren, die sich im ShoppingCart befinden
+     * Berechnet auf Aufruf den Preis der gesamten Waren, die sich im Stack befinden
      * >> Wird nur beim bezahlen aufgerufen -> Daher (vorerst) kein HilfsStack
      * @return gibt den gesamten Preis der Waren zurück.
      */

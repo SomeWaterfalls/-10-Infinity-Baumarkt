@@ -3,7 +3,7 @@ package Model;
 /**
  * Created by SomeWaterfalls & Automatik-BlueBird on 09.12.2016.
  */
-public class ShoppingCart<Good> {
+public class Stack<ContentType> {
     //Stack
 
 
@@ -12,9 +12,9 @@ public class ShoppingCart<Good> {
 
     //___________________________________________
     private class StackNode{
-        private Good content= null;
+        private ContentType content= null;
         private StackNode next = null;
-        public StackNode(Good content){
+        public StackNode(ContentType content){
             this.content =content;
         }
 
@@ -24,12 +24,12 @@ public class ShoppingCart<Good> {
         public StackNode getNext(){
             return next;
         }
-        public Good getContent(){
+        public ContentType getContent(){
             return content;
         }
     }
     //____________________________________________________
-    public ShoppingCart(){
+    public Stack(){
         top = null;
 
     }
@@ -41,7 +41,7 @@ public class ShoppingCart<Good> {
         return false;
     }
 
-    public void push(Good object){
+    public void push(ContentType object){
         StackNode node = new StackNode(object);
         node.setNext(top);
         top = node;
@@ -57,7 +57,7 @@ public class ShoppingCart<Good> {
     }
 
 
-    public Good top(){
+    public ContentType top(){
         if(top != null) {
             return top.getContent();
         }

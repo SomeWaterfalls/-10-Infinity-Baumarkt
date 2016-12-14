@@ -4,14 +4,14 @@ package Model;
  * Created by SomeWaterfalls & Automatik-BlueBird on 09.12.2016.
  */
 public class Register {
-    private CashQueue<Customer> queue;
+    private Queue<Customer> queue;
 
     /**
      * Die Kasse wird erstellt und erhält eine Schlange.
      * Die Schlange ist keine Giftschlange.
      */
     public Register(){
-        queue = new CashQueue();
+        queue = new Queue();
 
     }
 

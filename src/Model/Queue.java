@@ -3,7 +3,7 @@ package Model;
 /**
  * Created by SomeWaterfalls & Automatik-BlueBird on 09.12.2016.
  */
-public class CashQueue<Customer> {
+public class Queue<ContentType> {
     //Queue
 
     private QueueNode head;
@@ -11,10 +11,10 @@ public class CashQueue<Customer> {
     /* Anfang der inneren Klasse */
     private class QueueNode{
 
-        private Customer content = null;
+        private ContentType content = null;
         private QueueNode nextNode = null;
 
-        public QueueNode(Customer content){
+        public QueueNode(ContentType content){
             this.content = content;
         }
 
@@ -26,13 +26,13 @@ public class CashQueue<Customer> {
             nextNode = next;
         }
 
-        public Customer getContent(){
+        public ContentType getContent(){
             return content;
         }
     }
     /* Ende der inneren Klasse */
 
-    public CashQueue(){
+    public Queue(){
         head = null;
         tail = null;
     }
@@ -44,7 +44,7 @@ public class CashQueue<Customer> {
         return false;
     }
 
-    public void enqueue(Customer content){
+    public void enqueue(ContentType content){
         QueueNode node = new QueueNode(content);
         if(this.isEmpty()){
             this.head = node;
@@ -64,7 +64,7 @@ public class CashQueue<Customer> {
         }
     }
 
-    public Customer front(){
+    public ContentType front(){
         if(!isEmpty()){
             return head.getContent();
         }

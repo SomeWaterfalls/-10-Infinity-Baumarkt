@@ -10,8 +10,8 @@ import java.awt.event.ActionListener;
  * Created by 204g12 on 09.12.2016.
  */
 public class GUIView {
-    private JList shoppingcard;
-    private JList etagenListe;
+    private JList shoppingCart;
+    private JList sektorProducts;
     private JButton downButton;
     private JButton rightButton;
     private JButton elevatorUpButton;
@@ -22,7 +22,7 @@ public class GUIView {
     private JTextArea areaC;
     private JTextArea areaB;
     private JTextArea areaA;
-    private JTextArea etagenzahlAnzeige;
+    private JTextArea levelCount;
     private JButton elevatorDownButton;
 
     int etagenzahl = 0;
@@ -63,13 +63,13 @@ public class GUIView {
 
         valueButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println(shoppingcard);
+                System.out.println(value);
             }
         });
 
         elevatorDownButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                mainController.moveDown();
 
                 elevatorUpButton.setEnabled(mainController.downEIsPossible());
             }

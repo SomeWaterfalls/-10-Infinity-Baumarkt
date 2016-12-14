@@ -12,7 +12,7 @@ public class Customer {
      * Ein Customer wird erzeugt und kriegt einen Einkaufswagen und ein Budget.
      */
     public Customer(double budget) {
-        cart = new Stack();
+        cart = new Stack<Good>();
         this.budget = budget;
     }
 
@@ -30,6 +30,8 @@ public class Customer {
      * @return gibt den gesamten Preis der Waren zurück.
      */
 
+    //Hier ein Hilfsstack einfügen, Damit die Waren nicht verschwinden.
+    //Notiz an Patti: Schande für deine Faulheit!!
     public double whatToPay() {
         while (!cart.isEmpty()){
             fullPrice = fullPrice + cart.top().getPrice();

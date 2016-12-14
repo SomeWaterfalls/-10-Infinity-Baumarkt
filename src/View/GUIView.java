@@ -19,6 +19,9 @@ public class GUIView {
     private JButton valueButton;
     private JButton leftButton;
     private JTextArea areaD;
+    private JTextArea areaC;
+    private JTextArea areaB;
+    private JTextArea areaA;
     private JTextArea etagenzahlAnzeige;
     private JButton elevatorDownButton;
 
@@ -30,6 +33,10 @@ public class GUIView {
 
         this.mainController = mainController;
 
+        createButtons();
+    }
+
+    private void createButtons(){
         upButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 upButton.setEnabled(mainController.upIsPossible());
@@ -65,14 +72,14 @@ public class GUIView {
 
 
                 elevatorUpButton.setEnabled(mainController.downEIsPossible());
-                }
+            }
 
         });
 
         elevatorUpButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 //customer fährt hoch
-
+                mainController.moveUp();
 
                 //ist weiterhin hoch möglich? Falls nicht -> Knopf aus
                 elevatorUpButton.setEnabled(mainController.upEIsPossible());

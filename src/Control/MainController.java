@@ -36,5 +36,12 @@ public class MainController {
     public boolean rightIsPossible(){
         return true;
     }
-}
 
+    /**
+     * Der Nutzer fährt eine Etage höher, falls er in der dazu passenden Section ist und weitere Etagen nach oben vorhanden sind.
+     * Ansonsten passiert nichts.
+     */
+    public void moveUp(){
+
+    }
+}

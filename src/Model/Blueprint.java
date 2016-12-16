@@ -20,4 +20,12 @@ public class Blueprint {
     public int getHeigth(){
         return allSections.length;
     }
+
+    public int getWidth(){
+        return allSections.length;
+    }
+
+    public int getLength(){
+        return allSections.length;
+    }
 }

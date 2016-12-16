@@ -33,6 +33,11 @@ public class MainController {
         return false;
     }
 
+    /**
+     * Überprüft, ob der Nutzer in der passenden Sektion ist, um eine Etage nach unten zu fahren.
+     * Falls ja, so kann er herunterfahren, wenn eine weitere Etage vorhanden ist.
+     * @return true, falls herunterfahren möglich, sonst false.
+     */
     public boolean downEIsPossible(){
         if(customer.getX() == 0 && customer.getY() == 0){
             if(customer.getZ() > blueprint.getHeigth() - 1){
@@ -47,6 +52,7 @@ public class MainController {
     }
 
     public boolean downIsPossible(){
+        if(customer.getY() > blueprint.getLength() )
         return false;
     }
 
@@ -62,9 +68,15 @@ public class MainController {
      * Der Nutzer fährt eine Etage höher, falls er in der dazu passenden Section ist und weitere Etagen nach oben vorhanden sind.
      * Ansonsten passiert nichts.
      */
-    public void moveUp(){
+    public void moveUpE(){
         if(upEIsPossible()){
-            customer.moveUp();
+            customer.moveUpE();
+        }
+    }
+
+    public void moveDownE(){
+        if(downEIsPossible()){
+            customer.moveDownE();
         }
     }
 }

@@ -78,4 +78,30 @@ public class MainController {
             customer.moveDownE();
         }
     }
+
+    /**
+     * Rechnet alle Preise im Einkaufswagen zusammen und gibt diesen in Euro an
+     * @return
+     */
+    public int value(){
+        return -1;
+    }
+
+    /**
+     * Soll Inhalt des Shoppingcarts angeben
+     */
+    public void cartSubstance(){
+
+    }
+
+    /**
+     * Soll die Etagezahl anzeigen
+     */
+    public int showLevel(){
+        return -1;
+    }
+
+    public int sectorHandler(){
+        return -1;
+    }
 }

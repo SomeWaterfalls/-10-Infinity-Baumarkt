@@ -101,6 +101,7 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-4063309"/>
           <editable value="false"/>
           <text value=""/>
         </properties>
@@ -114,6 +115,7 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-4063309"/>
           <editable value="false"/>
           <text value=""/>
         </properties>
@@ -127,6 +129,7 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-4063309"/>
           <editable value="false"/>
         </properties>
       </component>
@@ -139,6 +142,7 @@
           </grid>
         </constraints>
         <properties>
+          <background color="-4063309"/>
           <editable value="false"/>
           <text value=""/>
         </properties>

@@ -8,9 +8,6 @@ public class Blueprint {
     //Referenzen
     private Section[][][] allSections;
 
-    /**
-     * Der Konstruktor erstellt das "Gebäude" in der Form Gebäudehöhe (z) - Etagenbreite (x) - Etagenhöhe (y)
-     */
     public Blueprint(){
         allSections = new Section[3][2][2];
     }
@@ -24,18 +21,11 @@ public class Blueprint {
         return allSections.length;
     }
 
-    public int getEast(){
+    public int getWidth(){
         return allSections[0].length;
     }
 
-    public int getNorth(){
+    public int getLength(){
         return allSections[0][0].length;
-    }
-
-    /**
-     * Gibt die Section (Also die Waren die da sind) für die eingegebene Position an.
-     */
-    public Section getSection(int z, int x, int y){
-        return allSections[z][x][y];
     }
 }

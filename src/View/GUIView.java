@@ -25,7 +25,6 @@ public class GUIView {
     private JTextArea levelCount;
     private JButton elevatorDownButton;
 
-    int etagenzahl = 0;
 
     private MainController mainController;
 
@@ -36,7 +35,11 @@ public class GUIView {
         createButtons();
     }
 
-    private void createButtons(){
+    private void createButtons() {
+
+        /**
+         * Section movement!
+         */
         upButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 upButton.setEnabled(mainController.upIsPossible());
@@ -57,33 +60,49 @@ public class GUIView {
 
         rightButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                if(mainController.moveRight()){
+
+                }
                 rightButton.setEnabled(mainController.rightIsPossible());
             }
         });
 
-        valueButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                System.out.println();
-            }
-        });
-
+         /**
+         * Elevator movement!
+         */
         elevatorDownButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                mainController.moveDown();
-
                 elevatorUpButton.setEnabled(mainController.downEIsPossible());
+                mainController.moveDownE();
             }
 
         });
 
         elevatorUpButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                //customer fährt hoch
-                mainController.moveUp();
-
-                //ist weiterhin hoch möglich? Falls nicht -> Knopf aus
                 elevatorUpButton.setEnabled(mainController.upEIsPossible());
+                mainController.moveUpE();
             }
         });
+
+        /**
+         * Value!
+         */
+        valueButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(mainController.value());
+            }
+        });
+    }
+
+    /**
+     * LevelCount!
+     */
+    public void levelHandler() {
+        levelCount.setText("" + mainController.showLevel());
+    }
+
+    public void shoppingCart(){
+
     }
 }

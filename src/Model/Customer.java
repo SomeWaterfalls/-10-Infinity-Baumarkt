@@ -30,22 +30,17 @@ public class Customer {
 
     /**
      * Berechnet auf Aufruf den Preis der gesamten Waren, die sich im Stack befinden
-     * Die abgelesenen Waren werden in ein Hilfsstack verschoben und nach dem Berechnen des Preises
-     * wieder in den "cart" Stack zurückgeschoben. (Yuhuu, Hilfsstack! :D)
+     * >> Wird nur beim bezahlen aufgerufen -> Daher (vorerst) kein HilfsStack
      * @return gibt den gesamten Preis der Waren zurück.
      */
 
+    //Hier ein Hilfsstack einfügen, Damit die Waren nicht verschwinden.
+    //Notiz an Patti: Schande für deine Faulheit!!
     public double whatToPay() {
-        Stack<Good> helper = new Stack<Good>();
         while (!cart.isEmpty()){
             fullPrice = fullPrice + cart.top().getPrice();
-            helper.push(cart.top());
             cart.pop();
          }
-        while (!helper.isEmpty()){
-            cart.push(helper.top());
-            helper.pop();
-        }
         return fullPrice;
     }
 
@@ -73,11 +68,6 @@ public class Customer {
         }
     }
 
-    /**
-     * Methoden um die Positon zu erfahren.
-     * @return x Gibt die Etagenbreite zurück (links&rechts), y gibt die Etagenhöhe zurück (vor/zurück),
-     * Hier steht also z für die Gebäudehöhe (hoch/runter)
-     */
     public int getX(){
         return x;
     }
@@ -90,58 +80,11 @@ public class Customer {
         return z;
     }
 
-    /**
-     * Methoden zur Bewegung in alle Richtungen
-     * -> Ob es möglich ist wird im MainController überprüft!
-     */
-
-
     public void moveUp(){
-        z = z + 1;
+        z = z  + 1;
     }
 
     public void moveDown(){
         z = z - 1;
     }
-
-    public void moveRight(){
-        x = x + 1;
-    }
-
-    public void moveLeft(){
-        x = x - 1;
-    }
-
-    public void moveForward(){
-        y = y + 1;
-    }
-
-    public void moveBackwards(){
-        y = y - 1;
-    }
-
-    /**
-     * Grabbt eine gegebene Ware und wirft sie in den wunderbaren Infinity-Einkaufswagen™  (©Infinity-Baumarkt)
-     */
-    public void grabbinGoods(Good grab){
-        cart.push(grab);
-    }
-
-    public void throwinGood(){
-        if(!cart.isEmpty()) {
-            cart.pop();
-        }
-    }
-
 }
-
-
-
-
-
-
-
-
-
-
-//©  ™

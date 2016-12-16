@@ -97,9 +97,10 @@ public class Customer {
     }
 
     public void moveLeft(){
-        x = x -1;
+        x = x - 1;
     }
-    public void moveRight{
+
+    public void moveRight(){
         x = x + 1;
     }
 }

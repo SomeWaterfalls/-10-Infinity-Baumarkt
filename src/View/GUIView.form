@@ -8,7 +8,7 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="4254c" class="javax.swing.JList" binding="shoppingcard">
+      <component id="4254c" class="javax.swing.JList" binding="shoppingCart">
         <constraints>
           <grid row="10" column="0" row-span="5" col-span="7" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
@@ -18,7 +18,7 @@
           <model/>
         </properties>
       </component>
-      <component id="1223d" class="javax.swing.JList" binding="etagenListe">
+      <component id="1223d" class="javax.swing.JList" binding="sektorProducts">
         <constraints>
           <grid row="0" column="7" row-span="13" col-span="3" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="50"/>
@@ -143,7 +143,7 @@
           <text value=""/>
         </properties>
       </component>
-      <component id="ccd3e" class="javax.swing.JTextArea" binding="etagenzahlAnzeige">
+      <component id="ccd3e" class="javax.swing.JTextArea" binding="levelCount">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="6" vsize-policy="6" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
             <minimum-size width="25" height="25"/>

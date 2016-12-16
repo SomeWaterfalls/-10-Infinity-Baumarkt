@@ -62,4 +62,16 @@ public class MainController {
             customer.moveUp();
         }
     }
+
+    public void moveDown(){
+
+    }
+
+    /**
+     * Rechnet alle Preise im Einkaufswagen zusammen und gibt diesen in Euro an
+     * @return
+     */
+    public int value(){
+
+    }
 }

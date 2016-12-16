@@ -30,17 +30,22 @@ public class Customer {
 
     /**
      * Berechnet auf Aufruf den Preis der gesamten Waren, die sich im Stack befinden
-     * >> Wird nur beim bezahlen aufgerufen -> Daher (vorerst) kein HilfsStack
+     * Die abgelesenen Waren werden in ein Hilfsstack verschoben und nach dem Berechnen des Preises
+     * wieder in den "cart" Stack zurückgeschoben. (Yuhuu, Hilfsstack! :D)
      * @return gibt den gesamten Preis der Waren zurück.
      */
 
-    //Hier ein Hilfsstack einfügen, Damit die Waren nicht verschwinden.
-    //Notiz an Patti: Schande für deine Faulheit!!
     public double whatToPay() {
+        Stack<Good> helper = new Stack<Good>();
         while (!cart.isEmpty()){
             fullPrice = fullPrice + cart.top().getPrice();
+            helper.push(cart.top());
             cart.pop();
          }
+        while (!helper.isEmpty()){
+            cart.push(helper.top());
+            helper.pop();
+        }
         return fullPrice;
     }
 

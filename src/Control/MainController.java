@@ -72,6 +72,6 @@ public class MainController {
      * @return
      */
     public int value(){
-
+        return -1;
     }
 }

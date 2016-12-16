@@ -22,10 +22,10 @@ public class Blueprint {
     }
 
     public int getWidth(){
-        return allSections.length;
+        return allSections[0].length;
     }
 
     public int getLength(){
-        return allSections.length;
+        return allSections[0][0].length;
     }
 }

@@ -52,7 +52,9 @@ public class MainController {
     }
 
     public boolean downIsPossible(){
-        if(customer.getY() > blueprint.getLength() )
+        if(customer.getY() > blueprint.getLength() - 1){
+            return true;
+        }
         return false;
     }
 

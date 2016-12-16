@@ -1,10 +1,15 @@
 package Control;
 
+import Model.Blueprint;
+import Model.Customer;
+
 /**
  * Created by 204g11 on 09.12.2016.
  */
 public class MainController {
     //Yo, Phillip, dis is your Métier.
+    private Customer customer;
+    private Blueprint blueprint;
 
     //Etagenzahl liefern, aktuelle Section, Etagenbreite und höhe aus Blueprint-Objekt weiterleiten
     //TODO
@@ -13,8 +18,19 @@ public class MainController {
     }
 
     //TODO
+
+    /**
+     * Überprüft, ob der Nutzer in der passenden Sektion ist, um eine Etage nach oben zu fahren.
+     * Falls ja, so kann er hochfahren, wenn eine weitere Etage vorhanden ist.
+     * @return true, falls hochfahren möglich, sonst false.
+     */
     public boolean upEIsPossible(){
-        return true;
+        if(customer.getX() == 0 && customer.getX() == 0){
+            if(customer.getZ() < blueprint.getHeigth() - 1){
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean downEIsPossible(){
@@ -42,6 +58,8 @@ public class MainController {
      * Ansonsten passiert nichts.
      */
     public void moveUp(){
-
+        if(upEIsPossible()){
+            customer.moveUp();
+        }
     }
 }

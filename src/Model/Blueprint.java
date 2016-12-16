@@ -13,4 +13,11 @@ public class Blueprint {
     }
 
 
+    /**
+     *
+     * @return Höhe des Gebäudes
+     */
+    public int getHeigth(){
+        return allSections.length;
+    }
 }

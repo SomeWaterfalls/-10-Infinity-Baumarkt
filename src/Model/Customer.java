@@ -7,6 +7,7 @@ public class Customer {
     private Stack<Good> cart;
     private double budget;
     private double fullPrice = 0;
+    private int x, y, z;
 
     /**
      * Ein Customer wird erzeugt und kriegt einen Einkaufswagen und ein Budget.
@@ -14,6 +15,9 @@ public class Customer {
     public Customer(double budget) {
         cart = new Stack();
         this.budget = budget;
+        x = 0;
+        y = 0;
+        z = 0;
     }
 
     /**
@@ -62,5 +66,23 @@ public class Customer {
         }
     }
 
+    public int getX(){
+        return x;
+    }
 
+    public int getY(){
+        return y;
+    }
+
+    public int getZ(){
+        return z;
+    }
+
+    public void moveUp(){
+        z = z  + 1;
+    }
+
+    public void moveDown(){
+        z = z - 1;
+    }
 }

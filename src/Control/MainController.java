@@ -7,7 +7,7 @@ import Model.Customer;
  * Created by 204g11 on 09.12.2016.
  */
 public class MainController {
-    //Yo, Phillip, dis is your Métier.
+    //Yo, Philipp, dis is your Métier.
     private Customer customer;
     private Blueprint blueprint;
 
@@ -25,7 +25,7 @@ public class MainController {
      * @return true, falls hochfahren möglich, sonst false.
      */
     public boolean upEIsPossible(){
-        if(customer.getX() == 0 && customer.getX() == 0){
+        if(customer.getX() == 0 && customer.getY() == 0){
             if(customer.getZ() < blueprint.getHeigth() - 1){
                 return true;
             }
@@ -34,7 +34,12 @@ public class MainController {
     }
 
     public boolean downEIsPossible(){
-        return true;
+        if(customer.getX() == 0 && customer.getY() == 0){
+            if(customer.getZ() > blueprint.getHeigth() - 1){
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean upIsPossible(){
@@ -42,7 +47,7 @@ public class MainController {
     }
 
     public boolean downIsPossible(){
-        return true;
+        return false;
     }
 
     public boolean leftIsPossible(){
@@ -61,17 +66,5 @@ public class MainController {
         if(upEIsPossible()){
             customer.moveUp();
         }
-    }
-
-    public void moveDown(){
-
-    }
-
-    /**
-     * Rechnet alle Preise im Einkaufswagen zusammen und gibt diesen in Euro an
-     * @return
-     */
-    public int value(){
-        return -1;
     }
 }

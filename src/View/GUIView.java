@@ -63,7 +63,7 @@ public class GUIView {
 
         valueButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                System.out.println(value);
+                System.out.println();
             }
         });
 

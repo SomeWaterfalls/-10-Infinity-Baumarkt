@@ -5,5 +5,7 @@ package Model;
  */
 public class Section {
 
+    //TODO: Section mit Waren füllen!!1
+
 
 }

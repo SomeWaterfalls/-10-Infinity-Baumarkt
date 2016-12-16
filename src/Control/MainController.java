@@ -67,4 +67,8 @@ public class MainController {
             customer.moveUp();
         }
     }
+
+    public void moveDown(){
+
+    }
 }

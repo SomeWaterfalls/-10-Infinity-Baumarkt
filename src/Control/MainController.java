@@ -12,6 +12,11 @@ public class MainController {
     private Customer customer;
     private Blueprint blueprint;
 
+    public MainController(){
+        customer = new Model.Customer(500);
+        blueprint = new Model.Blueprint();
+    }
+
     //Etagenzahl liefern, aktuelle Section, Etagenbreite und höhe aus Blueprint-Objekt weiterleiten
     //TODO
     public int getLevelCount() {

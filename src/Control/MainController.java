@@ -79,6 +79,7 @@ public class MainController {
         }
     }
 
+
     /**
      * Rechnet alle Preise im Einkaufswagen zusammen und gibt diesen in Euro an
      * @return

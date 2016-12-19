@@ -21,11 +21,19 @@ public class Blueprint {
         return allSections.length;
     }
 
-    public int getWidth(){
+    public int getEast(){
         return allSections[0].length;
     }
 
-    public int getLength(){
+    public int getNorth(){
         return allSections[0][0].length;
+    }
+
+    /**
+     * Gibt die Section (Also die Waren die da sind) für die eingegebene Position an.
+     */
+
+    public Section getSection(int z, int x, int y){
+        return allSections[z][x][y];
     }
 }

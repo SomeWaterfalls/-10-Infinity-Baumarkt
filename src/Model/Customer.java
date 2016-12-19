@@ -22,7 +22,9 @@ public class Customer {
 
     /**
      * @return gibt das Budget zurück. Eine Getter Methode. Braucht die wirklich eine Beschriftung?
-     * Sie ist eigentlich selbsterklärend, aber gut.
+     * Sie ist eigentlich selbsterklärend, aber gut, dann erkläre ich es nochmal.
+     * Eine Getter Methode gibt einen Wert zurück. Hier ist es ein double.
+     * Zurückgegeben wird das Attribut budget.
      */
     public double getBudget() {
         return budget;
@@ -37,10 +39,16 @@ public class Customer {
     //Hier ein Hilfsstack einfügen, Damit die Waren nicht verschwinden.
     //Notiz an Patti: Schande für deine Faulheit!!
     public double whatToPay() {
+        Stack<Good> helf = new Stack<Good>();
         while (!cart.isEmpty()){
             fullPrice = fullPrice + cart.top().getPrice();
+            helf.push(cart.top());
             cart.pop();
          }
+        while(!helf.isEmpty()){
+            cart.push(helf.top());
+            helf.pop();
+        }
         return fullPrice;
     }
 
@@ -68,9 +76,16 @@ public class Customer {
         }
     }
 
+    /**
+     * Methoden um die Positon zu erfahren.
+     * @return x Gibt die Etagenbreite zurück (links&rechts), y gibt die Etagenhöhe zurück (vor/zurück),
+     * Hier steht also z für die Gebäudehöhe (hoch/runter)
+     */
+
     public int getX(){
         return x;
     }
+
 
     public int getY(){
         return y;
@@ -80,27 +95,54 @@ public class Customer {
         return z;
     }
 
+
+    /**
+     * Methoden zur Bewegung in alle Richtungen
+     * -> Ob es möglich ist wird im MainController überprüft!
+     */
+
+
     public void moveUpE(){
-        z = z  + 1;
+        z = z + 1;
     }
 
     public void moveDownE(){
         z = z - 1;
     }
 
-    public void moveUp(){
-        y = y + 1;
-    }
-
-    public void moveDown(){
-        y = y - 1;
+    public void moveRight(){
+        x = x + 1;
     }
 
     public void moveLeft(){
         x = x - 1;
     }
 
-    public void moveRight(){
-        x = x + 1;
+    public void moveForward(){
+        y = y + 1;
+    }
+
+    public void moveBackwards(){
+        y = y - 1;
+    }
+
+    /**
+     * Grabbt eine gegebene Ware und wirft sie in den wunderbaren Infinity-Einkaufswagen™  (©Infinity-Baumarkt)!
+     */
+    public void grabbinGoods(Good grab){
+        cart.push(grab);
+    }
+
+    public void throwinGood(){
+        if(!cart.isEmpty()) {
+            cart.pop();
+        }
     }
 }
+
+
+
+
+
+
+//©  ™

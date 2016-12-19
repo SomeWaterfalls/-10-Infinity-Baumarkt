@@ -70,7 +70,7 @@ public class GUIView {
 
         rightButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                if(mainController.moveRight()){
+                if(mainController.rightIsPossible()){
 
                 }
                 rightButton.setEnabled(mainController.rightIsPossible());

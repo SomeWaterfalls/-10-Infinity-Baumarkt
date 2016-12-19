@@ -121,7 +121,7 @@ public class Customer {
     }
 
     /**
-     * Grabbt eine gegebene Ware und wirft sie in den wunderbaren Infinity-Einkaufswagen™  (©Infinity-Baumarkt)
+     * Grabbt eine gegebene Ware und wirft sie in den wunderbaren Infinity-Einkaufswagen™  (©Infinity-Baumarkt)!
      */
     public void grabbinGoods(Good grab){
         cart.push(grab);

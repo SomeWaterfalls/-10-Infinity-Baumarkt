@@ -30,7 +30,7 @@ public class Blueprint {
     }
 
     /**
-     * Gibt die Section (Also die Waren die da sind) für die eingegebene Position an.
+     * Gibt die Section (Also die Waren die da sind) für die eingegebene Position an..
      */
 
     public Section getSection(int z, int x, int y){

@@ -64,22 +64,22 @@ public class MainController {
     }
 
     /**
-     * Customer bewegt sich nach Oben, Unten, Links oder/und Rechts !!! 0_0
+     * Customer kann sich nach Oben, Unten, Links oder/und Rechts bewegen !!! 0_0
      * @return
      */
 
     public boolean moveUp(){
         if(upIsPossible()){
-            customer.moveUp();
+            customer.moveForward();
         }
         return false;
     }
 
     public boolean moveDown(){
         if (downIsPossible()){
-            customer.moveDown();
+            customer.moveBackwards();
         }
-        return false
+        return false;
     }
 
     public boolean moveLeft(){

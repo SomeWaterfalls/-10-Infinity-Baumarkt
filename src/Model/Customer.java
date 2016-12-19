@@ -39,10 +39,16 @@ public class Customer {
     //Hier ein Hilfsstack einfügen, Damit die Waren nicht verschwinden.
     //Notiz an Patti: Schande für deine Faulheit!!
     public double whatToPay() {
+        Stack<Good> helf = new Stack<Good>();
         while (!cart.isEmpty()){
             fullPrice = fullPrice + cart.top().getPrice();
+            helf.push(cart.top());
             cart.pop();
          }
+        while(!helf.isEmpty()){
+            cart.push(helf.top());
+            helf.pop();
+        }
         return fullPrice;
     }
 

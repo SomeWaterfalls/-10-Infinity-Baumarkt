@@ -2,6 +2,7 @@ package Control;
 
 import Model.Blueprint;
 import Model.Customer;
+import com.sun.xml.internal.bind.v2.TODO;
 
 /**
  * Created by 204g11 on 09.12.2016.
@@ -59,14 +60,47 @@ public class MainController {
         return true;
     }
 
-    public boolean rightIsPossible(){
-        return true;
+    public boolean rightIsPossible(){return true;
+    }
+
+    /**
+     * Customer bewegt sich nach Oben, Unten, Links oder/und Rechts !!! 0_0
+     * @return
+     */
+
+    public boolean moveUp(){
+        if(upIsPossible()){
+            customer.moveUp();
+        }
+        return false;
+    }
+
+    public boolean moveDown(){
+        if (downIsPossible()){
+            customer.moveDown();
+        }
+        return false
+    }
+
+    public boolean moveLeft(){
+        if (leftIsPossible()){
+            customer.moveLeft();
+        }
+        return false;
+    }
+
+    public boolean moveRight() {
+        if(rightIsPossible()) {
+            customer.moveRight();
+        }
+        return false;
     }
 
     /**
      * Der Nutzer fährt eine Etage höher, falls er in der dazu passenden Section ist und weitere Etagen nach oben vorhanden sind.
      * Ansonsten passiert nichts.
      */
+
     public void moveUpE(){
         if(upEIsPossible()){
             customer.moveUpE();

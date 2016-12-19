@@ -41,19 +41,29 @@ public class GUIView {
          * Section movement!
          */
         upButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e){
+                if(mainController.moveUp())
+
                 upButton.setEnabled(mainController.upIsPossible());
             }
         });
 
         downButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e){
+                if (mainController.moveDown()){
+
+                }
+
                 downButton.setEnabled(mainController.downIsPossible());
             }
         });
 
         leftButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e){
+                if(mainController.moveLeft()){
+
+                }
+
                 leftButton.setEnabled(mainController.leftIsPossible());
             }
         });
